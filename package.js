@@ -16,12 +16,22 @@ Package.onUse(function(api) {
     'space:ui@5.3.0',
   ]);
 
+  // MODULES
+  api.addFiles(['source/server/module.coffee'], 'server');
+  api.addFiles(['source/client/module.coffee'], 'client');
+
+  // SHARED
   api.addFiles([
-    'source/server/module.coffee',
+    'source/shared/serializables.coffee'
+  ]);
+
+  // SERVER
+  api.addFiles([
+    'source/server/api.coffee',
   ], 'server');
 
+  // CLIENT
   api.addFiles([
-    'source/client/module.coffee',
     'source/client/stores/accounts-store.coffee',
     'source/client/views/admin-view.html',
     'source/client/views/admin-view.coffee',

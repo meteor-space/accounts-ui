@@ -7,3 +7,17 @@ class Space.accountsUi.AdminView extends Space.ui.BlazeComponent
   }
 
   accounts: -> @accountsStore.get 'accounts'
+
+  events: -> [
+    'click .submit': @createAccountWithCurrentInput
+  ]
+
+  getAccountInputs: -> {
+    username: @$('.create-new .username').val()
+    email: @$('.create-new .email').val()
+    password: @$('.create-new .password').val()
+  }
+
+  createAccountWithCurrentInput: ->
+    credentials = @getAccountInputs()
+    Space.messaging.Api.send new Space.accountsUi.CreateAccount(credentials)

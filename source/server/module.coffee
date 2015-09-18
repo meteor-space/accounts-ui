@@ -5,3 +5,7 @@ class Space.accountsUi extends Space.Module
   RequiredModules: [
     'Space.accounts'
   ]
+
+  Singletons: [
+    'Space.accountsUi.Api'
+  ]
