@@ -1,0 +1,29 @@
+<template name="space_accounts_ui_admin_view">
+
+<div class="space-accounts admin-view">
+  <h1>Accounts Administration</h1>
+
+  <div class="create-new">
+    <h2>Create New Account</h2>
+  </div>
+
+  <div class="existing">
+    <h2>Existing Accounts</h2>
+    <table class="accounts">
+      <thead>
+        <td class="username">Username</td>
+        <td class="email">Email</td>
+      </thead>
+      <tbody>
+        {{#each accounts}}
+        <tr>
+          <td class="username">{{username}}</td>
+          <td class="email">{{emails.[0].address}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+  </table>
+  </div>
+</div>
+
+</template>
