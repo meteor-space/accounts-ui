@@ -4,13 +4,20 @@ class Space.accountsUi extends Space.ui.Module
 
   RequiredModules: [
     'Space.ui'
-    'Space.accounts'
+    'Space.accountsApi'
   ]
 
   Stores: [
-    'Space.accountsUi.AccountsStore'
+    'Space.accountsUi.UsersStore'
+    'Space.accountsUi.CurrentUserStore'
+  ]
+
+  Controllers: [
+    'Space.accountsUi.LoginController'
+    'Space.accountsUi.RegistrationController'
   ]
 
   Components: [
     'Space.accountsUi.AdminView'
+    'Space.accountsUi.LoginView'
   ]

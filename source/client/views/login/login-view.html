@@ -1,0 +1,13 @@
+<template name="space_accounts_ui_login_view">
+
+<div class="space-accounts login-view">
+  <h1>Login</h1>
+  <input class="user" type="text" placeholder="Username or Email" />
+  <input class="password" type="password" placeholder="Password" />
+  <button class="submit">Login</button>
+  {{#if loginError}}
+    <p class="error">{{loginError.reason}}</p>
+  {{/if}}
+</div>
+
+</template>
