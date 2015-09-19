@@ -13,11 +13,14 @@ class Space.accountsUi extends Space.ui.Module
   ]
 
   Controllers: [
-    'Space.accountsUi.LoginController'
-    'Space.accountsUi.RegistrationController'
+    'Space.accountsUi.AccountController'
   ]
 
   Components: [
     'Space.accountsUi.AdminView'
     'Space.accountsUi.LoginView'
+  ]
+
+  Singletons: [
+    'Space.accountsUi.UsersTracker'
   ]

@@ -26,8 +26,9 @@ Package.onUse(function(api) {
     'source/client/stores/users-store.coffee',
     'source/client/stores/current-user-store.coffee',
     // Controllers
-    'source/client/controllers/login-controller.coffee',
-    'source/client/controllers/registration-controller.coffee',
+    'source/client/controllers/account-controller.coffee',
+    // Trackers
+    'source/client/trackers/users-tracker.coffee',
     // Components
     'source/client/views/admin/admin-view.html',
     'source/client/views/admin/admin-view.coffee',
