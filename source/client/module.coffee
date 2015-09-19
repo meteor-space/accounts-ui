@@ -4,7 +4,7 @@ class Space.accountsUi extends Space.ui.Module
 
   RequiredModules: [
     'Space.ui'
-    'Space.accountsApi'
+    'Space.accountsAppService'
   ]
 
   Stores: [

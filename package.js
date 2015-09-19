@@ -14,7 +14,7 @@ Package.onUse(function(api) {
     'coffeescript',
     'templating',
     'peerlibrary:blaze-components@0.13.0',
-    'space:accounts-api@0.1.0',
+    'space:accounts-app-service@0.1.0',
     'space:ui@5.3.0',
   ]);
 

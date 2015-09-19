@@ -3,7 +3,7 @@
 class Space.accountsUi.CurrentUserStore extends Space.ui.Store
 
   Dependencies: {
-    users: 'Space.accountsApi.CurrentUserDAO'
+    users: 'Space.accountsAppService.CurrentUserDAO'
   }
 
   setDefaultState: -> {
