@@ -1,14 +1,14 @@
 Space.messaging.define Space.messaging.Event, 'Space.accountsUi', {
 
   AccountCreationRequested: {
-    username: String
-    email: String
-    password: String
+    username: Username
+    email: EmailAddress
+    password: Password
   }
 
   LoginRequested: {
     user: String
-    password: String
+    password: Password
   }
 
   LogoutRequested: {}

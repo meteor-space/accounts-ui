@@ -16,6 +16,7 @@ Package.onUse(function(api) {
     'tracker',
     'accounts-base',
     'accounts-password',
+    'space:vo-user@0.2.0',
     'space:accounts-app-service@0.1.0',
     'space:ui@5.3.0',
   ]);
