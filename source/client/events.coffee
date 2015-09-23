@@ -11,6 +11,8 @@ Space.messaging.define Space.messaging.Event, 'Space.accountsUi', {
     password: String
   }
 
+  LogoutRequested: {}
+
   LoginFailed: {
     user: String
     error: Meteor.Error
