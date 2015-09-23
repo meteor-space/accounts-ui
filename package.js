@@ -8,11 +8,14 @@ Package.describe({
 
 Package.onUse(function(api) {
 
-  api.versionsFrom('1.0');
+  api.versionsFrom('METEOR@1.2.0.1');
 
   api.use([
     'coffeescript',
     'templating',
+    'tracker',
+    'accounts-base',
+    'accounts-password',
     'peerlibrary:blaze-components@0.13.0',
     'space:accounts-app-service@0.1.0',
     'space:ui@5.3.0',
