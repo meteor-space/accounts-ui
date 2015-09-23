@@ -3,7 +3,8 @@
 class Space.accountsUi.CurrentUserStore extends Space.ui.Store
 
   Dependencies: {
-    users: 'Space.accountsAppService.CurrentUserDAO'
+    currentUser: 'Space.accountsAppService.CurrentUserDAO'
+    _: 'underscore'
   }
 
   setDefaultState: -> {
@@ -11,7 +12,8 @@ class Space.accountsUi.CurrentUserStore extends Space.ui.Store
   }
 
   setReactiveState: -> {
-    isLoggedIn: => @users.isLoggedIn()
+    userData: => @currentUser.data(),
+    isLoggedIn: => @currentUser.isLoggedIn()
   }
 
   @on LoginRequested, (event) -> @set 'loginError', null
