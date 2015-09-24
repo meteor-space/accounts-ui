@@ -1,7 +1,8 @@
+
 Package.describe({
   name: 'space:accounts-ui',
+  summary: 'Application layer foundation for accounts UI implementations.',
   version: '0.1.0',
-  summary: 'Foundation for UI implementations of an accounts admin interface.',
   git: 'https://github.com/meteor-space/accounts-ui.git',
   documentation: 'README.md'
 });
