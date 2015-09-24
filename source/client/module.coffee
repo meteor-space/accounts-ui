@@ -4,7 +4,6 @@ class Space.accountsUi extends Space.ui.Module
 
   RequiredModules: [
     'Space.ui'
-    'Space.accountsAppService'
   ]
 
   Stores: [
@@ -19,3 +18,8 @@ class Space.accountsUi extends Space.ui.Module
   Singletons: [
     'Space.accountsUi.UsersTracker'
   ]
+
+  configure: ->
+    @injector.map('SHA256').to SHA256
+    @injector.map('Meteor.user').to Meteor.user
+    @injector.map('Meteor.users').to Meteor.users

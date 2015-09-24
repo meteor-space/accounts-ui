@@ -3,7 +3,7 @@
 class Space.accountsUi.CurrentUserStore extends Space.ui.Store
 
   Dependencies: {
-    currentUser: 'Space.accountsAppService.CurrentUserDAO'
+    currentUser: 'Space.accountsUi.CurrentUserDAO'
     _: 'underscore'
   }
 

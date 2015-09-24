@@ -14,7 +14,7 @@ class Space.accountsUi.AccountController extends Space.messaging.Controller
 
   @on AccountCreationRequested, (event) ->
 
-    Space.messaging.Api.send new Space.accountsAppService.CreateUser {
+    Space.messaging.Api.send new Space.accountsUi.CreateUser {
       username: event.username
       email: event.email
       password: @sha256(event.password)
