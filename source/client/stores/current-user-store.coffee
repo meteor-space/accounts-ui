@@ -1,9 +1,15 @@
-{ LoginFailed, LoginSucceeded, LoginRequested } = Space.accountsUi
+{
+  LoginFailed
+  LoginSucceeded
+  LoginRequested
+  LogoutRequested
+} = Space.accountsUi
 
 class Space.accountsUi.CurrentUserStore extends Space.ui.Store
 
   Dependencies: {
-    currentUser: 'Space.accountsAppService.CurrentUserDAO'
+    currentUser: 'Space.accountsUi.CurrentUserDAO'
+    meteor: 'Meteor'
     _: 'underscore'
   }
 
@@ -16,8 +22,10 @@ class Space.accountsUi.CurrentUserStore extends Space.ui.Store
     isLoggedIn: => @currentUser.isLoggedIn()
   }
 
-  @on LoginRequested, (event) -> @set 'loginError', null
+  @on LoginRequested, -> @set 'loginError', null
 
   @on LoginFailed, (event) -> @set 'loginError', event.error
 
-  @on LoginSucceeded, (event) -> @set 'loginError', null
+  @on LoginSucceeded, -> @set 'loginError', null
+
+  @on LogoutRequested, -> @meteor.logout()
