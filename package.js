@@ -70,8 +70,9 @@ Package.onTest(function(api) {
 
   api.addFiles([
     'tests/test-app.coffee',
-    'tests/fixtures.js',
+    'tests/fixtures.coffee',
     'tests/unit/users-dao.unit.coffee',
+    'tests/unit/current-user-dao.unit.coffee',
   ], ['client', 'server']);
 
 });

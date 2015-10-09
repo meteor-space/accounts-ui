@@ -1,13 +1,13 @@
 describe 'Space.accountsUi.UsersDAO unit', ->
 
   beforeEach ->
-    Meteor.call('removeUsers')
+    Meteor.call('resetEnvironment')
     @usersDao = new Space.accountsUi.UsersDAO()
     @usersDao.users = Meteor.users
-    Meteor.call('addUsers')
+    Meteor.call('addUsers', 3)
 
   afterEach ->
-    Meteor.call('removeUsers')
+    Meteor.call('resetEnvironment')
 
   describe 'getting users', ->
 
