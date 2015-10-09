@@ -13,19 +13,18 @@ class Space.accountsUi.CurrentUserStore extends Space.ui.Store
     _: 'underscore'
   }
 
-  setDefaultState: -> {
+  reactiveVars: -> [
     loginError: null
-  }
+  ]
 
-  setReactiveState: -> {
-    userData: => @currentUser.data(),
-    isLoggedIn: => @currentUser.isLoggedIn()
-  }
+  userData: -> @currentUser.data(),
 
-  @on LoginRequested, -> @set 'loginError', null
+  isLoggedIn: -> @currentUser.isLoggedIn()
 
-  @on LoginFailed, (event) -> @set 'loginError', event.error
+  @on LoginRequested, -> @_setReactiveVar 'loginError', null
 
-  @on LoginSucceeded, -> @set 'loginError', null
+  @on LoginFailed, (event) -> @_setReactiveVar 'loginError', event.error
+
+  @on LoginSucceeded, -> @_setReactiveVar 'loginError', null
 
   @on LogoutRequested, -> @meteor.logout()

@@ -4,6 +4,4 @@ class Space.accountsUi.UsersStore extends Space.ui.Store
     users: 'Space.accountsUi.UsersDAO'
   }
 
-  setDefaultState: -> {
-    accounts: @users.all()
-  }
+  accounts: -> @users.all()
