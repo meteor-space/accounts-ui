@@ -1,4 +1,4 @@
-class Space.accountsUi.UsersStore extends Space.ui.Store
+class Space.accountsUi.UsersStore extends Space.flux.Store
 
   Dependencies: {
     users: 'Space.accountsUi.UsersDAO'

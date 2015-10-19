@@ -5,7 +5,7 @@
   LogoutRequested
 } = Space.accountsUi
 
-class Space.accountsUi.CurrentUserStore extends Space.ui.Store
+class Space.accountsUi.CurrentUserStore extends Space.flux.Store
 
   Dependencies: {
     currentUser: 'Space.accountsUi.CurrentUserDAO'

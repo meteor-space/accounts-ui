@@ -21,7 +21,7 @@ Package.onUse(function(api) {
     'accounts-password',
     'space:vo-user@0.2.0',
     'space:accounts@0.1.2',
-    'space:ui@5.3.0',
+    'space:flux@0.6.0',
   ]);
 
   // MODULES

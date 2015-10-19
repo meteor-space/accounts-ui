@@ -1,9 +1,9 @@
-class Space.accountsUi extends Space.ui.Module
+class Space.accountsUi extends Space.flux.Module
 
   @publish this, 'Space.accountsUi'
 
   RequiredModules: [
-    'Space.ui'
+    'Space.flux'
   ]
 
   Stores: [
