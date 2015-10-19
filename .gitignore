@@ -1,1 +1,5 @@
 .idea/
+.build*
+.DS_Store
+local-packages.json
+packages
