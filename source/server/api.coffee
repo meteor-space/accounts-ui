@@ -1,6 +1,6 @@
 class Space.accountsUi.Api extends Space.messaging.Api
 
-  Dependencies: {
+  dependencies: {
     meteor: 'Meteor'
   }
 

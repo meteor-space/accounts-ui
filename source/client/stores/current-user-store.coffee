@@ -7,7 +7,7 @@
 
 class Space.accountsUi.CurrentUserStore extends Space.flux.Store
 
-  Dependencies: {
+  dependencies: {
     currentUser: 'Space.accountsUi.CurrentUserDAO'
     meteor: 'Meteor'
     _: 'underscore'

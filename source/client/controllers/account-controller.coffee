@@ -7,7 +7,7 @@
 
 class Space.accountsUi.AccountController extends Space.messaging.Controller
 
-  Dependencies: {
+  dependencies: {
     sha256: 'SHA256'
     meteor: 'Meteor'
   }

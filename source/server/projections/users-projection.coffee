@@ -1,10 +1,10 @@
 class Space.accountsUi.UsersProjection extends Space.eventSourcing.Projection
 
-  Dependencies: {
+  dependencies: {
     accounts: 'Accounts'
   }
 
-  Collections: {
+  collections: {
     usersCollection: 'Meteor.users'
   }
 

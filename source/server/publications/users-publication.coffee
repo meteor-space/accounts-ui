@@ -1,6 +1,6 @@
 class Space.accountsUi.UsersPublication extends Space.messaging.Publication
 
-  Dependencies: {
+  dependencies: {
     users: 'Space.accountsUi.UsersDAO'
   }
 
