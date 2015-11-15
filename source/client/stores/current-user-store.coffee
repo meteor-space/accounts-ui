@@ -1,30 +1,26 @@
-{
-  LoginFailed
-  LoginSucceeded
-  LoginRequested
-  LogoutRequested
-} = Space.accountsUi
-
 class Space.accountsUi.CurrentUserStore extends Space.flux.Store
 
   dependencies: {
     currentUser: 'Space.accountsUi.CurrentUserDAO'
     meteor: 'Meteor'
-    _: 'underscore'
   }
 
   reactiveVars: -> [
     loginError: null
   ]
 
-  userData: -> @currentUser.data(),
+  userData: -> @currentUser.data()
 
   isLoggedIn: -> @currentUser.isLoggedIn()
 
-  @on LoginRequested, -> @_setReactiveVar 'loginError', null
+  eventSubscriptions: -> [
 
-  @on LoginFailed, (event) -> @_setReactiveVar 'loginError', event.error
+    'Space.accountsUi.LoginRequested': -> @_setReactiveVar 'loginError', null
 
-  @on LoginSucceeded, -> @_setReactiveVar 'loginError', null
+    'Space.accountsUi.LoginFailed': (event) -> @_setReactiveVar 'loginError', event.error
 
-  @on LogoutRequested, -> @meteor.logout()
+    'Space.accountsUi.LoginSucceeded': -> @_setReactiveVar 'loginError', null
+
+    'Space.accountsUi.LogoutRequested': -> @meteor.logout()
+
+  ]
