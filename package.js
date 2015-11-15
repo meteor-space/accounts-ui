@@ -19,7 +19,7 @@ Package.onUse(function(api) {
     'tracker',
     'accounts-base',
     'accounts-password',
-    'space:vo-user@0.2.0',
+    'space:vo-user@0.2.1',
     'space:accounts@0.1.2',
     'space:flux@0.6.0',
   ]);
@@ -64,8 +64,8 @@ Package.onTest(function(api) {
     'coffeescript',
     'accounts-password',
     'space:accounts-ui',
-    'space:vo-user@0.2.0',
-    'space:testing@1.3.0'
+    'space:vo-user@0.2.1',
+    'space:testing@2.0.1'
   ]);
 
   api.addFiles([
