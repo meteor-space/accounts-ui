@@ -19,8 +19,8 @@
     "git":"https://github.com/meteor-space/accounts.git",
     "branch": "develop"
   },
-  "space:vo-users": {
-    "git":"https://github.com/meteor-space/vo-users.git",
+  "space:vo-user": {
+    "git":"https://github.com/meteor-space/vo-user.git",
     "branch": "develop"
   },
   "space:testing": {
