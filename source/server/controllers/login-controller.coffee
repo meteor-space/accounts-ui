@@ -1,6 +1,6 @@
 class Space.accountsUi.LoginController extends Space.messaging.Controller
 
-  Dependencies: {
+  dependencies: {
     accounts: 'Accounts'
   }
 

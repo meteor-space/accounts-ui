@@ -1,6 +1,6 @@
 class Space.accountsUi.UsersTracker extends Space.messaging.Tracker
 
-  Dependencies: {
+  dependencies: {
     meteor: 'Meteor'
   }
 

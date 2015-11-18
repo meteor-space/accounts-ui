@@ -1,6 +1,6 @@
 class Space.accountsUi.CurrentUserDAO extends Space.Object
 
-  Dependencies: {
+  dependencies: {
     currentUser: 'Meteor.user'
   }
 

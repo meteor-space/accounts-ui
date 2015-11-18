@@ -2,20 +2,20 @@ class Space.accountsUi extends Space.flux.Module
 
   @publish this, 'Space.accountsUi'
 
-  RequiredModules: [
+  requiredModules: [
     'Space.flux'
   ]
 
-  Stores: [
+  stores: [
     'Space.accountsUi.UsersStore'
     'Space.accountsUi.CurrentUserStore'
   ]
 
-  Controllers: [
+  controllers: [
     'Space.accountsUi.AccountController'
   ]
 
-  Singletons: [
+  singletons: [
     'Space.accountsUi.UsersTracker'
   ]
 

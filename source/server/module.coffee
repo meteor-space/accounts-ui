@@ -2,11 +2,11 @@ class Space.accountsUi extends Space.Module
 
   @publish this, 'Space.accountsUi'
 
-  RequiredModules: [
+  requiredModules: [
     'Space.accounts'
   ]
 
-  Singletons: [
+  singletons: [
     'Space.accountsUi.Api'
     'Space.accountsUi.LoginController'
     'Space.accountsUi.UsersProjection'

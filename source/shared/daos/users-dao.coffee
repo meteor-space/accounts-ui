@@ -1,6 +1,6 @@
 class Space.accountsUi.UsersDAO extends Space.Object
 
-  Dependencies: {
+  dependencies: {
     users: 'Meteor.users'
   }
 

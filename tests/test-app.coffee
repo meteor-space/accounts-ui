@@ -2,7 +2,7 @@ class Space.accountsUi.IntegrationTestApp extends Space.Application
 
   RequiredModules: ['Space.accountsUi']
 
-  Dependencies: {
+  dependencies: {
     eventBus: 'Space.messaging.EventBus'
     commandBus: 'Space.messaging.CommandBus'
     accountsUiConfig: 'Space.accountsUi.Configuration'

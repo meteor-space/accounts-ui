@@ -1,10 +1,10 @@
 class Space.accountsUi.UsersProjection extends Space.eventSourcing.Projection
 
-  Dependencies: {
+  dependencies: {
     accounts: 'Accounts'
   }
 
-  Collections: {
+  collections: {
     usersCollection: 'Meteor.users'
   }
 
@@ -32,10 +32,12 @@ class Space.accountsUi.UsersProjection extends Space.eventSourcing.Projection
     Meteor.users = @_meteorUsersBackup
     @_meteorUsersBackup = null
 
-  @on Space.accounts.UserCreated, (event) ->
-    @accounts.createUser {
-      username: event.username.toString()
-      email: event.email.toString()
-      password: event.password.toString()
-      guid: event.sourceId.toString()
-    }
+  eventSubscriptions: -> [
+    'Space.accounts.UserCreated': (event) ->
+      @accounts.createUser {
+        username: event.username.toString()
+        email: event.email.toString()
+        password: event.password.toString()
+        guid: event.sourceId.toString()
+      }
+  ]
