@@ -4,4 +4,6 @@ class Space.accountsUi.UsersPublication extends Space.messaging.Publication
     users: 'Space.accountsUi.UsersDAO'
   }
 
-  @publish 'all-users', (context) -> @users.all() if context.userId?
+  publications: -> [
+    'all-users': (context) -> @users.all() if context.userId?
+  ]
