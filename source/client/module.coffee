@@ -1,4 +1,4 @@
-class Space.accountsUi extends Space.flux.Module
+class Space.accountsUi extends Space.Module
 
   @publish this, 'Space.accountsUi'
 
