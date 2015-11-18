@@ -17,6 +17,7 @@ class Space.accountsUi extends Space.flux.Module
 
   singletons: [
     'Space.accountsUi.UsersTracker'
+    'Space.accountsUi.CurrentUserDAO'
   ]
 
   configure: ->

@@ -11,7 +11,6 @@ class Space.accountsUi extends Space.Module
     'Space.accountsUi.LoginController'
     'Space.accountsUi.UsersProjection'
     'Space.accountsUi.UsersPublication'
-    'Space.accountsUi.CurrentUserDAO'
   ]
 
   configure: ->

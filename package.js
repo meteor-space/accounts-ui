@@ -21,7 +21,7 @@ Package.onUse(function(api) {
     'accounts-password',
     'space:vo-user@0.2.1',
     'space:accounts@0.1.2',
-    'space:flux@0.6.0',
+    'space:flux@0.6.0'
   ]);
 
   // MODULES
@@ -31,20 +31,20 @@ Package.onUse(function(api) {
   // SHARED
   api.addFiles([
     'source/shared/commands.coffee',
-    'source/shared/daos/users-dao.coffee',
-    'source/shared/daos/current-user-dao.coffee',
+    'source/shared/dao/users-dao.coffee'
   ]);
 
   // CLIENT
   api.addFiles([
     'source/client/events.coffee',
+    'source/client/dao/current-user-dao.coffee',
     // Stores
     'source/client/stores/users-store.coffee',
     'source/client/stores/current-user-store.coffee',
     // Controllers
     'source/client/controllers/account-controller.coffee',
     // Trackers
-    'source/client/trackers/users-tracker.coffee',
+    'source/client/trackers/users-tracker.coffee'
   ], 'client');
 
   // SERVER
@@ -52,7 +52,7 @@ Package.onUse(function(api) {
     'source/server/api.coffee',
     'source/server/projections/users-projection.coffee',
     'source/server/controllers/login-controller.coffee',
-    'source/server/publications/users-publication.coffee',
+    'source/server/publications/users-publication.coffee'
   ], 'server');
 
 });
@@ -72,7 +72,7 @@ Package.onTest(function(api) {
     'tests/test-app.coffee',
     'tests/fixtures.coffee',
     'tests/unit/users-dao.unit.coffee',
-    'tests/unit/current-user-dao.unit.coffee',
+    'tests/unit/current-user-dao.unit.coffee'
   ], ['client', 'server']);
 
 });
