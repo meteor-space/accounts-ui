@@ -50,7 +50,6 @@ Package.onUse(function(api) {
   // SERVER
   api.addFiles([
     'source/server/api.coffee',
-    'source/server/projections/users-projection.coffee',
     'source/server/controllers/login-controller.coffee',
     'source/server/publications/users-publication.coffee'
   ], 'server');

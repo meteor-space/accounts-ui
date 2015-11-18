@@ -9,7 +9,6 @@ class Space.accountsUi extends Space.Module
   singletons: [
     'Space.accountsUi.Api'
     'Space.accountsUi.LoginController'
-    'Space.accountsUi.UsersProjection'
     'Space.accountsUi.UsersPublication'
   ]
 
