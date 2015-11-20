@@ -1,4 +1,4 @@
-class Space.accountsUi extends Space.flux.Module
+class Space.accountsUi extends Space.Module
 
   @publish this, 'Space.accountsUi'
 
@@ -17,6 +17,7 @@ class Space.accountsUi extends Space.flux.Module
 
   singletons: [
     'Space.accountsUi.UsersTracker'
+    'Space.accountsUi.CurrentUserDAO'
   ]
 
   configure: ->
