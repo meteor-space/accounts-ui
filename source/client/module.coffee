@@ -3,8 +3,8 @@ Space.accountsUi = Space.Module.define 'Space.accountsUi',
   configuration: {
     accountsUi: {
       requestSignupEvent: 'Space.accountsUi.SignupRequested',
-      initiateSignupComamnd: 'Space.accounts.InitiateSignup'
-      retrySignupComamnd: 'Space.accounts.RetrySignup'
+      initiateSignupCommand: 'Space.accounts.InitiateSignup'
+      retrySignupCommand: 'Space.accounts.RetrySignup'
     }
   }
 

@@ -29,7 +29,7 @@ Space.messaging.Controller.extend(Space.accountsUi, 'SignupController', {
     if (this.signUpStore.isSigningUp()) {
       // Retry previously initiated signup
       let signupId = this.signUpStore.signupId();
-      let RetryCommand = Space.resolvePath(config.retrySignupComamnd);
+      let RetryCommand = Space.resolvePath(config.retrySignupCommand);
       signupCommand = new RetryCommand(_.extend(data, {
         targetId: signupId
       }));
@@ -38,7 +38,7 @@ Space.messaging.Controller.extend(Space.accountsUi, 'SignupController', {
     } else {
       // Initiate a new signup process
       let signupId = new Guid();
-      let InitiateCommand = Space.resolvePath(config.initiateSignupComamnd);
+      let InitiateCommand = Space.resolvePath(config.initiateSignupCommand);
       signupCommand = new InitiateCommand(_.extend(data, {
         targetId: signupId
       }));
