@@ -1,17 +1,17 @@
 class Space.accountsUi.CurrentUserStore extends Space.flux.Store
 
   dependencies: {
-    currentUser: 'Space.accountsUi.CurrentUserDAO'
     meteor: 'Meteor'
   }
 
   reactiveVars: -> [
-    loginError: null
+    loginError: null,
+    isLoggedIn: false,
+    data: null,
+    userId: null
   ]
 
-  userData: -> @currentUser.data()
-
-  isLoggedIn: -> @currentUser.isLoggedIn()
+  computations: -> [this._updateUserState]
 
   eventSubscriptions: -> [
 
@@ -24,3 +24,9 @@ class Space.accountsUi.CurrentUserStore extends Space.flux.Store
     'Space.accountsUi.LogoutRequested': -> @meteor.logout()
 
   ]
+
+  _updateUserState: ->
+    user = @meteor.user()
+    @_setReactiveVar 'isLoggedIn', user?
+    @_setReactiveVar 'data', user
+    @_setReactiveVar 'userId', user?._id
