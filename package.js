@@ -32,6 +32,7 @@ Package.onUse(function(api) {
 
   // SHARED
   api.addFiles([
+    'source/shared/collections/signups.js',
     'source/shared/dao/users-dao.coffee'
   ]);
 
@@ -42,17 +43,19 @@ Package.onUse(function(api) {
     // Stores
     'source/client/stores/users-store.coffee',
     'source/client/stores/current-user-store.coffee',
-    'source/client/stores/signup-store.js',
+    'source/client/stores/signups-store.js',
     // Controllers
     'source/client/controllers/login-controller.js',
     'source/client/controllers/signup-controller.js',
     // Trackers
-    'source/client/trackers/users-tracker.coffee'
+    'source/client/trackers/users-tracker.coffee',
+    'source/client/trackers/signups-tracker.js'
   ], 'client');
 
   // SERVER
   api.addFiles([
-    'source/server/publications/users-publication.coffee'
+    'source/server/publications/signups-publication.js',
+    'source/server/publications/users-publication.js'
   ], 'server');
 
 });

@@ -13,7 +13,7 @@ Space.accountsUi = Space.Module.define 'Space.accountsUi',
   ]
 
   stores: [
-    'Space.accountsUi.SignupStore',
+    'Space.accountsUi.SignupsStore',
     'Space.accountsUi.UsersStore',
     'Space.accountsUi.CurrentUserStore'
   ]
@@ -25,6 +25,7 @@ Space.accountsUi = Space.Module.define 'Space.accountsUi',
 
   singletons: [
     'Space.accountsUi.UsersTracker'
+    'Space.accountsUi.SignupsTracker'
     'Space.accountsUi.CurrentUserDAO',
     'Space.accountsUi.UsersDAO'
   ]
@@ -33,3 +34,4 @@ Space.accountsUi = Space.Module.define 'Space.accountsUi',
     @injector.map('SHA256').to SHA256
     @injector.map('Meteor.user').to Meteor.user
     @injector.map('Meteor.users').to Meteor.users
+    @injector.map('Space.accountsUi.Signups').asStaticValue()

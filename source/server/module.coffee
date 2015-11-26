@@ -7,6 +7,7 @@ class Space.accountsUi extends Space.Module
   ]
 
   singletons: [
+    'Space.accountsUi.SignupsPublication'
     'Space.accountsUi.UsersPublication'
     'Space.accountsUi.UsersDAO'
   ]
@@ -15,3 +16,4 @@ class Space.accountsUi extends Space.Module
     @injector.map('SHA256').to SHA256
     @injector.map('Meteor.user').to Meteor.user
     @injector.map('Meteor.users').to Meteor.users
+    @injector.map('Space.accountsUi.Signups').asStaticValue()
