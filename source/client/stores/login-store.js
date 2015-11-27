@@ -17,17 +17,17 @@ Space.flux.Store.extend(Space.accountsUi, 'LoginStore', {
   },
 
   _onLoginInitiated() {
-    this._setSessionVar('isLoggingIn', true);
+    this._setReactiveVar('isLoggingIn', true);
   },
 
   _onLoginSucceeded() {
-    this._setSessionVar('isLoggingIn', false);
-    this._setSessionVar('error', null);
+    this._setReactiveVar('isLoggingIn', false);
+    this._setReactiveVar('error', null);
   },
 
   _onLoginFailed(event) {
-    this._setSessionVar('isLoggingIn', false);
-    this._setSessionVar('error', event.error);
+    this._setReactiveVar('isLoggingIn', false);
+    this._setReactiveVar('error', event.error);
   },
 
   _onLogoutRequested() {
