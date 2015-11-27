@@ -1,26 +1,37 @@
-class Space.accountsUi extends Space.Module
+Space.accountsUi = Space.Module.define 'Space.accountsUi',
 
-  @publish this, 'Space.accountsUi'
+  configuration: {
+    accountsUi: {
+      requestSignupEvent: 'Space.accountsUi.SignupRequested',
+      initiateSignupCommand: 'Space.accounts.InitiateSignup'
+      retrySignupCommand: 'Space.accounts.RetrySignup'
+    }
+  }
 
   requiredModules: [
     'Space.flux'
   ]
 
   stores: [
-    'Space.accountsUi.UsersStore'
+    'Space.accountsUi.SignupsStore',
+    'Space.accountsUi.UsersStore',
     'Space.accountsUi.CurrentUserStore'
   ]
 
   controllers: [
-    'Space.accountsUi.AccountController'
+    'Space.accountsUi.SignupController',
+    'Space.accountsUi.LoginController'
   ]
 
   singletons: [
     'Space.accountsUi.UsersTracker'
-    'Space.accountsUi.CurrentUserDAO'
+    'Space.accountsUi.SignupsTracker'
+    'Space.accountsUi.CurrentUserDAO',
+    'Space.accountsUi.UsersDAO'
   ]
 
-  configure: ->
+  onInitialize: ->
     @injector.map('SHA256').to SHA256
     @injector.map('Meteor.user').to Meteor.user
     @injector.map('Meteor.users').to Meteor.users
+    @injector.map('Space.accountsUi.Signups').asStaticValue()

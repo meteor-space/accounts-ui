@@ -17,6 +17,8 @@ Package.onUse(function(api) {
     'sha',
     'templating',
     'tracker',
+    'ecmascript',
+    'check',
     'accounts-base',
     'accounts-password',
     'space:vo-user@0.2.1',
@@ -30,7 +32,7 @@ Package.onUse(function(api) {
 
   // SHARED
   api.addFiles([
-    'source/shared/commands.coffee',
+    'source/shared/collections/signups.js',
     'source/shared/dao/users-dao.coffee'
   ]);
 
@@ -41,17 +43,19 @@ Package.onUse(function(api) {
     // Stores
     'source/client/stores/users-store.coffee',
     'source/client/stores/current-user-store.coffee',
+    'source/client/stores/signups-store.js',
     // Controllers
-    'source/client/controllers/account-controller.coffee',
+    'source/client/controllers/login-controller.js',
+    'source/client/controllers/signup-controller.js',
     // Trackers
-    'source/client/trackers/users-tracker.coffee'
+    'source/client/trackers/users-tracker.coffee',
+    'source/client/trackers/signups-tracker.js'
   ], 'client');
 
   // SERVER
   api.addFiles([
-    'source/server/api.coffee',
-    'source/server/controllers/login-controller.coffee',
-    'source/server/publications/users-publication.coffee'
+    'source/server/publications/signups-publication.js',
+    'source/server/publications/users-publication.js'
   ], 'server');
 
 });
