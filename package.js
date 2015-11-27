@@ -32,14 +32,12 @@ Package.onUse(function(api) {
 
   // SHARED
   api.addFiles([
-    'source/shared/collections/signups.js',
-    'source/shared/dao/users-dao.coffee'
+    'source/shared/collections/signups.js'
   ]);
 
   // CLIENT
   api.addFiles([
     'source/client/events.coffee',
-    'source/client/dao/current-user-dao.coffee',
     // Stores
     'source/client/stores/users-store.js',
     'source/client/stores/signups-store.js',
@@ -70,12 +68,5 @@ Package.onTest(function(api) {
     'space:vo-user@0.2.1',
     'space:testing@2.0.1'
   ]);
-
-  api.addFiles([
-    'tests/test-app.coffee',
-    'tests/fixtures.coffee',
-    'tests/unit/users-dao.unit.coffee',
-    'tests/unit/current-user-dao.unit.coffee'
-  ], ['client', 'server']);
 
 });

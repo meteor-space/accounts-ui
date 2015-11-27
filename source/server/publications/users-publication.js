@@ -1,13 +1,13 @@
 Space.messaging.Publication.extend(Space.accountsUi, 'UsersPublication', {
 
   dependencies: {
-    users: 'Space.accountsUi.UsersDAO'
+    meteor: 'Meteor'
   },
 
   publications() {
     return [{
       'all-users'(context) {
-        if (context.userId) return this.users.all();
+        if (context.userId) return this.meteor.users();
       }
     }];
   }
