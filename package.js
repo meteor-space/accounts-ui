@@ -46,14 +46,12 @@ Package.onUse(function(api) {
     'source/client/controllers/login-controller.js',
     'source/client/controllers/signup-controller.js',
     // Trackers
-    'source/client/trackers/users-tracker.coffee',
     'source/client/trackers/signups-tracker.js'
   ], 'client');
 
   // SERVER
   api.addFiles([
-    'source/server/publications/signups-publication.js',
-    'source/server/publications/users-publication.js'
+    'source/server/publications/signups-publication.js'
   ], 'server');
 
 });

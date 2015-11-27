@@ -24,7 +24,6 @@ Space.accountsUi = Space.Module.define 'Space.accountsUi',
   ]
 
   singletons: [
-    'Space.accountsUi.UsersTracker'
     'Space.accountsUi.SignupsTracker'
   ]
 
