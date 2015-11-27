@@ -41,9 +41,9 @@ Package.onUse(function(api) {
     'source/client/events.coffee',
     'source/client/dao/current-user-dao.coffee',
     // Stores
-    'source/client/stores/users-store.coffee',
-    'source/client/stores/current-user-store.coffee',
+    'source/client/stores/users-store.js',
     'source/client/stores/signups-store.js',
+    'source/client/stores/login-store.js',
     // Controllers
     'source/client/controllers/login-controller.js',
     'source/client/controllers/signup-controller.js',

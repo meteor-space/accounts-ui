@@ -14,8 +14,8 @@ Space.accountsUi = Space.Module.define 'Space.accountsUi',
 
   stores: [
     'Space.accountsUi.SignupsStore',
-    'Space.accountsUi.UsersStore',
-    'Space.accountsUi.CurrentUserStore'
+    'Space.accountsUi.LoginStore'
+    'Space.accountsUi.UsersStore'
   ]
 
   controllers: [

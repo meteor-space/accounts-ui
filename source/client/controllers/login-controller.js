@@ -23,5 +23,6 @@ Space.messaging.Controller.extend(Space.accountsUi, 'LoginController', {
         this.publish(new Space.accountsUi.LoginSucceeded({ user: event.user }));
       }
     });
+    this.publish(new Space.accountsUi.LoginInitiated({ user: event.user }));
   }
 });
