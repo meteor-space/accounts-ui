@@ -11,7 +11,7 @@ Space.flux.Store.extend(Space.accountsUi, 'UsersStore', {
   reactiveVars() {
     return [{
       isLoggedIn: false,
-      data: null,
+      user: null,
       userId: null
     }];
   },
@@ -24,7 +24,7 @@ Space.flux.Store.extend(Space.accountsUi, 'UsersStore', {
     let user = this.meteor.user();
     let isLoggedIn = user !== null && user !== undefined;
     this._setReactiveVar('isLoggedIn', isLoggedIn);
-    this._setReactiveVar('data', user);
+    this._setReactiveVar('user', user);
     this._setReactiveVar('userId', isLoggedIn ? user._id : null);
   }
 });
