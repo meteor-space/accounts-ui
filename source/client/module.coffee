@@ -1,13 +1,5 @@
 Space.accountsUi = Space.Module.define 'Space.accountsUi',
 
-  configuration: {
-    accountsUi: {
-      requestSignupEvent: 'Space.accountsUi.SignupRequested',
-      initiateSignupCommand: 'Space.accounts.InitiateSignup'
-      retrySignupCommand: 'Space.accounts.RetrySignup'
-    }
-  }
-
   requiredModules: [
     'Space.flux'
   ]
@@ -19,7 +11,6 @@ Space.accountsUi = Space.Module.define 'Space.accountsUi',
   ]
 
   controllers: [
-    'Space.accountsUi.SignupController',
     'Space.accountsUi.LoginController'
   ]
 

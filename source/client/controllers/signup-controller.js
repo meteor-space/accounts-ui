@@ -8,6 +8,10 @@ Space.messaging.Controller.extend(Space.accountsUi, 'SignupController', {
     log: 'log'
   },
 
+  requestSignupEvent: 'Space.accountsUi.SignupRequested',
+  initiateSignupCommand: 'Space.accounts.InitiateSignup',
+  retrySignupCommand: 'Space.accounts.RetrySignup',
+
   onDependenciesReady() {
     Space.messaging.Controller.prototype.onDependenciesReady.call(this);
     // Bind the response handler to this instance
@@ -17,8 +21,7 @@ Space.messaging.Controller.extend(Space.accountsUi, 'SignupController', {
   eventSubscriptions() {
     subscribers = {};
     // Subscribe to the configured signup-request event
-    requestEvent = this.configuration.accountsUi.requestSignupEvent;
-    subscribers[requestEvent] = this._onSignupRequested;
+    subscribers[this.requestSignupEvent] = this._onSignupRequested;
     return [subscribers];
   },
 
