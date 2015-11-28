@@ -36,8 +36,6 @@ Space.messaging.define Space.messaging.Event, 'Space.accountsUi', {
     user: String
   }
 
-  LogoutRequested: {}
-
   LoginFailed: {
     user: String
     error: Meteor.Error
@@ -46,5 +44,11 @@ Space.messaging.define Space.messaging.Event, 'Space.accountsUi', {
   LoginSucceeded: {
     user: String
   }
+
+  # LOGOUT
+
+  LogoutRequested: {}
+
+  LoggedOut: {}
 
 }

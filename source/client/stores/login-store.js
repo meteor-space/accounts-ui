@@ -4,8 +4,7 @@ Space.flux.Store.extend(Space.accountsUi, 'LoginStore', {
     return [{
       'Space.accountsUi.LoginInitiated': this._onLoginInitiated,
       'Space.accountsUi.LoginSucceeded': this._onLoginSucceeded,
-      'Space.accountsUi.LoginFailed': this._onLoginFailed,
-      'Space.accountsUi.LogoutRequested': this._onLogoutRequested
+      'Space.accountsUi.LoginFailed': this._onLoginFailed
     }];
   },
 
@@ -28,10 +27,6 @@ Space.flux.Store.extend(Space.accountsUi, 'LoginStore', {
   _onLoginFailed(event) {
     this._setReactiveVar('isLoggingIn', false);
     this._setReactiveVar('error', event.error);
-  },
-
-  _onLogoutRequested() {
-    this.meteor.logout();
   }
 
 });
