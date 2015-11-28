@@ -7,7 +7,8 @@ Space.messaging.Controller.extend(Space.accountsUi, 'LoginController', {
 
   eventSubscriptions() {
     return [{
-      'Space.accountsUi.LoginRequested': this._onLoginRequested
+      'Space.accountsUi.LoginRequested': this._onLoginRequested,
+      'Space.accountsUi.LogoutRequested': this._onLogoutRequested
     }];
   },
 
@@ -24,5 +25,10 @@ Space.messaging.Controller.extend(Space.accountsUi, 'LoginController', {
       }
     });
     this.publish(new Space.accountsUi.LoginInitiated({ user: event.user }));
+  },
+
+  _onLogoutRequested() {
+    this.meteor.logout();
+    this.publish(new Space.accountsUi.LoggedOut());
   }
 });
