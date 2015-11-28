@@ -1,5 +1,7 @@
 Space.messaging.define Space.messaging.Event, 'Space.accountsUi', {
 
+  # SIGNUP
+
   SignupRequested: {
     username: Match.OneOf(Username, null),
     email: Match.OneOf(EmailAddress, null),
@@ -23,9 +25,15 @@ Space.messaging.define Space.messaging.Event, 'Space.accountsUi', {
     signupId: Guid
   }
 
+  # LOGIN
+
   LoginRequested: {
     user: String
     password: Password
+  }
+
+  LoginInitiated: {
+    user: String
   }
 
   LogoutRequested: {}

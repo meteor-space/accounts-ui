@@ -8,8 +8,6 @@ class Space.accountsUi extends Space.Module
 
   singletons: [
     'Space.accountsUi.SignupsPublication'
-    'Space.accountsUi.UsersPublication'
-    'Space.accountsUi.UsersDAO'
   ]
 
   onInitialize: ->
