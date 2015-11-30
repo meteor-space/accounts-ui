@@ -38,7 +38,6 @@ Space.messaging.Controller.extend(Space.accountsUi, 'SignupController', {
     } else {
       signupId = new Guid();
     }
-    if (event.sourceId)
     // Resolve the configured command that should be used
     let InitiateCommand = Space.resolvePath(this.initiateSignupCommand);
     signupCommand = new InitiateCommand(_.extend(data, { targetId: signupId }));
