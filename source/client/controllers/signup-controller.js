@@ -26,13 +26,19 @@ Space.messaging.Controller.extend(Space.accountsUi, 'SignupController', {
   _onSignupRequested(event) {
     this.log.info(`${this}: received signup request <${event}>`);
     // Extract all properties from the event but omit default stuff we dont need
-    let data = _.omit(event.toPlainObject(), 'eventVersion', 'timestamp');
+    let data = _.omit(event.toPlainObject(), 'eventVersion', 'timestamp', 'sourceId');
     if (data.password) {
       // Never send passwords in plain text over the wire
       data.password = new Password(this.sha256(data.password.toString()));
     }
-    // Initiate a new signup process
-    let signupId = new Guid();
+    // Initiate a new signup process or target existing signup process
+    let signupId;
+    if (event.sourceId instanceof Guid) {
+      signupId = event.sourceId;
+    } else {
+      signupId = new Guid();
+    }
+    if (event.sourceId)
     // Resolve the configured command that should be used
     let InitiateCommand = Space.resolvePath(this.initiateSignupCommand);
     signupCommand = new InitiateCommand(_.extend(data, { targetId: signupId }));
