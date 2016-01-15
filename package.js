@@ -27,8 +27,8 @@ Package.onUse(function(api) {
   ]);
 
   // MODULES
-  api.addFiles(['source/server/module.coffee'], 'server');
-  api.addFiles(['source/client/module.coffee'], 'client');
+  api.addFiles(['source/server/module.js'], 'server');
+  api.addFiles(['source/client/module.js'], 'client');
 
   // SHARED
   api.addFiles([
