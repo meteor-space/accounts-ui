@@ -37,7 +37,7 @@ Package.onUse(function(api) {
 
   // CLIENT
   api.addFiles([
-    'source/client/events.coffee',
+    'source/client/events.js',
     // Stores
     'source/client/stores/users-store.js',
     'source/client/stores/signups-store.js',
