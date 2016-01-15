@@ -21,6 +21,8 @@ Package.onUse(function(api) {
     'check',
     'accounts-base',
     'accounts-password',
+    'accounts-google',
+    'service-configuration',
     'space:vo-user@0.2.1',
     'space:accounts@0.1.2',
     'space:flux@0.6.0'

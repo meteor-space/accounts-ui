@@ -45,6 +45,21 @@ Space.messaging.define(Space.messaging.Event, 'Space.accountsUi', {
     user: String
   },
 
+  // LOGIN WITH GOOGLE
+  LoginWithGoogleRequested: {
+
+  },
+
+  LoginWithGoogleInitiated: {
+  },
+
+  LoginWithGoogleFailed: {
+    error: Match.OneOf(Meteor.Error, ServiceConfiguration.ConfigError)
+  },
+
+  LoginWithGoogleSucceeded: {
+  },
+
   // LOGOUT
 
   LogoutRequested: {},

@@ -8,7 +8,8 @@ Space.messaging.Controller.extend(Space.accountsUi, 'LoginController', {
   eventSubscriptions() {
     return [{
       'Space.accountsUi.LoginRequested': this._onLoginRequested,
-      'Space.accountsUi.LogoutRequested': this._onLogoutRequested
+      'Space.accountsUi.LogoutRequested': this._onLogoutRequested,
+      'Space.accountsUi.LoginWithGoogleRequested': this._onLoginWithGoogleRequested,
     }];
   },
 
@@ -30,5 +31,20 @@ Space.messaging.Controller.extend(Space.accountsUi, 'LoginController', {
   _onLogoutRequested() {
     this.meteor.logout();
     this.publish(new Space.accountsUi.LoggedOut());
+  },
+
+  _onLoginWithGoogleRequested() {
+    this.meteor.loginWithGoogle({requestPermissions: ['email']}, (error) => {
+      if (error) {
+        let errorEvent = new Space.accountsUi.LoginWithGoogleFailed({
+          error: error
+        });
+        this.publish(errorEvent);
+      } else {
+        this.publish(new Space.accountsUi.LoginWithGoogleSucceeded({}));
+      }
+    });
+    this.publish(new Space.accountsUi.LoginWithGoogleInitiated({}));
   }
+
 });
