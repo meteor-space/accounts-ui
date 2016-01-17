@@ -3,9 +3,10 @@ Space.messaging.define(Space.messaging.Event, 'Space.accountsUi', {
   // SIGNUP
 
   SignupRequested: {
-    username: Match.OneOf(Username, null),
-    email: Match.OneOf(EmailAddress, null),
-    password: Match.OneOf(Password, null)
+    username: Match.Optional(Username),
+    email: Match.Optional(EmailAddress),
+    password: Match.Optional(Password),
+    loginType: LoginType
   },
 
   SignupInitiated: {
@@ -28,24 +29,24 @@ Space.messaging.define(Space.messaging.Event, 'Space.accountsUi', {
   // LOGIN
 
   LoginRequested: {
-    user: Match.OneOf(null, Username, EmailAddress),
-    password: Match.OneOf(null, Password),
+    user: Match.Optional(Match.OneOf(Username, EmailAddress)),
+    password: Match.Optional(Password),
     loginType: LoginType
   },
 
   LoginInitiated: {
-    user: Match.OneOf(null, Username, EmailAddress),
+    user: Match.Optional(Match.OneOf(Username, EmailAddress)),
     loginType: LoginType
   },
 
   LoginFailed: {
-    user: Match.OneOf(null, Username, EmailAddress),
+    user: Match.Optional(Match.OneOf(Username, EmailAddress)),
     loginType: LoginType,
     error: Match.OneOf(Meteor.Error, ServiceConfiguration.ConfigError)
   },
 
   LoginSucceeded: {
-    user: Match.OneOf(null, Username, EmailAddress),
+    user: Match.Optional(Match.OneOf(Username, EmailAddress)),
     loginType: LoginType
   },
 
