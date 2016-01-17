@@ -28,36 +28,25 @@ Space.messaging.define(Space.messaging.Event, 'Space.accountsUi', {
   // LOGIN
 
   LoginRequested: {
-    user: String,
-    password: Password
+    user: Match.OneOf(null, Username, EmailAddress),
+    password: Match.OneOf(null, Password),
+    loginType: LoginType
   },
 
   LoginInitiated: {
-    user: String
+    user: Match.OneOf(null, Username, EmailAddress),
+    loginType: LoginType
   },
 
   LoginFailed: {
-    user: String,
-    error: Meteor.Error
-  },
-
-  LoginSucceeded: {
-    user: String
-  },
-
-  // LOGIN WITH GOOGLE
-  LoginWithGoogleRequested: {
-
-  },
-
-  LoginWithGoogleInitiated: {
-  },
-
-  LoginWithGoogleFailed: {
+    user: Match.OneOf(null, Username, EmailAddress),
+    loginType: LoginType,
     error: Match.OneOf(Meteor.Error, ServiceConfiguration.ConfigError)
   },
 
-  LoginWithGoogleSucceeded: {
+  LoginSucceeded: {
+    user: Match.OneOf(null, Username, EmailAddress),
+    loginType: LoginType
   },
 
   // LOGOUT
