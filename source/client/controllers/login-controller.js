@@ -54,6 +54,24 @@ Space.messaging.Controller.extend(Space.accountsUi, 'LoginController', {
             loginType: event.loginType
           }));
         break;
+        case 'facebook':
+          this.meteor.loginWithFacebook({requestPermissions: ['email', 'public_profile']}, (error) => {
+            if (error) {
+              let errorEvent = new Space.accountsUi.LoginFailed({
+                error: error,
+                loginType: event.loginType
+              });
+              this.publish(errorEvent);
+            } else {
+              this.publish(new Space.accountsUi.LoginSucceeded({
+                loginType: event.loginType
+              }));
+            }
+          });
+          this.publish(new Space.accountsUi.LoginInitiated({
+            loginType: event.loginType
+          }));
+          break;
       }
     }
 
