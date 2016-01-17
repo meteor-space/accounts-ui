@@ -13,22 +13,73 @@ Space.messaging.Controller.extend(Space.accountsUi, 'LoginController', {
   },
 
   _onLoginRequested(event) {
-    let password = event.password.toString();
-    this.meteor.loginWithPassword(event.user, password, (error) => {
-      if (error) {
-        this.publish(new Space.accountsUi.LoginFailed({
-          user: event.user,
-          error: error
-        }));
-      } else {
-        this.publish(new Space.accountsUi.LoginSucceeded({ user: event.user }));
+
+    if (!event.loginType.isService()) {
+      let password = event.password.toString();
+      this.meteor.loginWithPassword(event.user, password, (error) => {
+        if (error) {
+          this.publish(new Space.accountsUi.LoginFailed({
+            user: event.user,
+            error: error,
+            loginType: event.loginType
+          }));
+        } else {
+          this.publish(new Space.accountsUi.LoginSucceeded({
+            user: event.user,
+            loginType: event.loginType
+          }));
+        }
+      });
+      this.publish(new Space.accountsUi.LoginInitiated({
+        user: event.user,
+        loginType: event.loginType
+      }));
+    } else {
+      switch(event.loginType.loginType) {
+        case 'google':
+          this.meteor.loginWithGoogle({requestPermissions: ['email']}, (error) => {
+            if (error) {
+              let errorEvent = new Space.accountsUi.LoginFailed({
+                error: error,
+                loginType: event.loginType
+              });
+              this.publish(errorEvent);
+            } else {
+              this.publish(new Space.accountsUi.LoginSucceeded({
+                loginType: event.loginType
+              }));
+            }
+          });
+          this.publish(new Space.accountsUi.LoginInitiated({
+            loginType: event.loginType
+          }));
+        break;
+        case 'facebook':
+          this.meteor.loginWithFacebook({requestPermissions: ['email', 'public_profile']}, (error) => {
+            if (error) {
+              let errorEvent = new Space.accountsUi.LoginFailed({
+                error: error,
+                loginType: event.loginType
+              });
+              this.publish(errorEvent);
+            } else {
+              this.publish(new Space.accountsUi.LoginSucceeded({
+                loginType: event.loginType
+              }));
+            }
+          });
+          this.publish(new Space.accountsUi.LoginInitiated({
+            loginType: event.loginType
+          }));
+          break;
       }
-    });
-    this.publish(new Space.accountsUi.LoginInitiated({ user: event.user }));
+    }
+
   },
 
   _onLogoutRequested() {
     this.meteor.logout();
     this.publish(new Space.accountsUi.LoggedOut());
   }
+
 });

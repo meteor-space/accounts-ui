@@ -17,7 +17,7 @@
   },
   "space:accounts": {
     "git":"https://github.com/meteor-space/accounts.git",
-    "branch": "develop"
+    "branch": "feature/login-with-google"
   },
   "space:vo-user": {
     "git":"https://github.com/meteor-space/vo-user.git",

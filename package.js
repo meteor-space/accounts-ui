@@ -21,14 +21,16 @@ Package.onUse(function(api) {
     'check',
     'accounts-base',
     'accounts-password',
+    'accounts-google',
+    'service-configuration',
     'space:vo-user@0.2.1',
     'space:accounts@0.1.2',
     'space:flux@0.6.0'
   ]);
 
   // MODULES
-  api.addFiles(['source/server/module.coffee'], 'server');
-  api.addFiles(['source/client/module.coffee'], 'client');
+  api.addFiles(['source/server/module.js'], 'server');
+  api.addFiles(['source/client/module.js'], 'client');
 
   // SHARED
   api.addFiles([
@@ -37,7 +39,7 @@ Package.onUse(function(api) {
 
   // CLIENT
   api.addFiles([
-    'source/client/events.coffee',
+    'source/client/events.js',
     // Stores
     'source/client/stores/users-store.js',
     'source/client/stores/signups-store.js',
