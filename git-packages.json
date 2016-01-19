@@ -13,7 +13,7 @@
   },
   "space:flux": {
     "git":"https://github.com/meteor-space/flux.git",
-    "version": "a86b5661e4245ad7e378b4c565bb9a7ebfa7ba5d"
+    "version": "83fea2cc9646f06c4794a736c746e684f0cb83c7"
   },
   "space:accounts": {
     "git":"https://github.com/meteor-space/accounts.git",
