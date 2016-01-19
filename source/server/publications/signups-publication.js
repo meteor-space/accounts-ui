@@ -1,4 +1,4 @@
-Space.messaging.Publication.extend(Space.accountsUi, 'SignupsPublication', {
+Space.messaging.Publication.extend('Space.accountsUi.SignupsPublication', {
 
   dependencies: {
     signups: 'Space.accountsUi.Signups'

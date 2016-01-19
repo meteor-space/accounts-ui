@@ -1,4 +1,4 @@
-Space.flux.Store.extend(Space.accountsUi, 'LoginStore', {
+Space.flux.Store.extend('Space.accountsUi.LoginStore', {
 
   eventSubscriptions() {
     return [{
