@@ -1,30 +1,30 @@
 {
   "space:base": {
     "git":"https://github.com/meteor-space/base.git",
-    "branch": "develop"
+    "version": "80400f278c0ad911b8dee888eca4c54d979f1a1c"
   },
   "space:messaging": {
     "git":"https://github.com/meteor-space/messaging.git",
-    "branch": "develop"
+    "version": "ff0dfa578b2fcd39f167f3c51afc6d9ac7011ae3"
   },
   "space:event-sourcing": {
     "git":"https://github.com/meteor-space/event-sourcing.git",
-    "branch": "develop"
+    "version": "9941fdd800543c1897eb0d8baaf30514e53f301a"
   },
   "space:flux": {
     "git":"https://github.com/meteor-space/flux.git",
-    "branch": "develop"
+    "version": "132a5f5a46263eb14e42d07ef1bafe6e0a949c65"
   },
   "space:accounts": {
     "git":"https://github.com/meteor-space/accounts.git",
-    "branch": "develop"
+    "version": "eabe24e8287ad315d093f61230ab28d538d40ef0"
   },
   "space:vo-user": {
     "git":"https://github.com/meteor-space/vo-user.git",
-    "branch": "develop"
+    "version": "4478cbb914ced9cd8e91f1491fcb12e64709921f"
   },
   "space:testing": {
     "git":"https://github.com/meteor-space/testing.git",
-    "branch": "develop"
+    "version": "1978ad9b6c40c1cda6030cafb7cc2496b27187e2"
   }
 }
