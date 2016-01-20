@@ -1,4 +1,4 @@
-Space.messaging.Controller.extend(Space.accountsUi, 'LoginController', {
+Space.messaging.Controller.extend('Space.accountsUi.LoginController', {
 
   dependencies: {
     meteor: 'Meteor',

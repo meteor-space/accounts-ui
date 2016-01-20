@@ -1,4 +1,4 @@
-Space.messaging.Controller.extend(Space.accountsUi, 'SignupController', {
+Space.messaging.Controller.extend('Space.accountsUi.SignupController', {
 
   dependencies: {
     sha256: 'SHA256',

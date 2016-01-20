@@ -1,4 +1,4 @@
-Space.flux.Store.extend(Space.accountsUi, 'SignupsStore', {
+Space.flux.Store.extend('Space.accountsUi.SignupsStore', {
 
   dependencies: {
     signups: 'Space.accountsUi.Signups',

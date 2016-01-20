@@ -1,4 +1,4 @@
-Space.flux.Store.extend(Space.accountsUi, 'UsersStore', {
+Space.flux.Store.extend('Space.accountsUi.UsersStore', {
 
   dependencies: {
     meteor: 'Meteor'

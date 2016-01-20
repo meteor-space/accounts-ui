@@ -1,4 +1,4 @@
-Space.messaging.Tracker.extend(Space.accountsUi, 'SignupsTracker', {
+Space.messaging.Tracker.extend('Space.accountsUi.SignupsTracker', {
 
   dependencies: {
     store: 'Space.accountsUi.SignupsStore'
