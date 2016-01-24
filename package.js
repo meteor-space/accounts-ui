@@ -15,7 +15,6 @@ Package.onUse(function(api) {
     'coffeescript',
     'mongo',
     'sha',
-    'templating',
     'tracker',
     'ecmascript',
     'check',
@@ -25,7 +24,7 @@ Package.onUse(function(api) {
     'service-configuration',
     'space:vo-user@0.2.1',
     'space:accounts@0.1.2',
-    'space:flux@0.6.0'
+    'space:flux@0.7.0'
   ]);
 
   // MODULES
