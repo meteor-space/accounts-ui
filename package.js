@@ -9,13 +9,12 @@ Package.describe({
 
 Package.onUse(function(api) {
 
-  api.versionsFrom('METEOR@1.2.0.1');
+  api.versionsFrom('1.2.0.1');
 
   api.use([
     'coffeescript',
     'mongo',
     'sha',
-    'templating',
     'tracker',
     'ecmascript',
     'check',
@@ -23,7 +22,7 @@ Package.onUse(function(api) {
     'accounts-password',
     'space:vo-user@0.2.1',
     'space:accounts@0.1.2',
-    'space:flux@0.6.0'
+    'space:flux@0.7.0'
   ]);
 
   // MODULES
