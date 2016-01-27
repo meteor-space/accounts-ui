@@ -21,7 +21,7 @@
   },
   "space:accounts": {
     "git":"https://github.com/meteor-space/accounts.git",
-    "version": "87bcaf2258c38ce2d4058d8b77a828f608b8ee93"
+    "version": "bf744e5b77c973ca73939e42657371bd6860d587"
   },
   "space:vo-user": {
     "git":"https://github.com/meteor-space/vo-user.git",
