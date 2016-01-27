@@ -1,4 +1,4 @@
-Space.messaging.define(Space.messaging.Event, 'Space.accountsUi', {
+Space.ui.defineEvents('Space.accountsUi', {
 
   // SIGNUP
 
