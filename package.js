@@ -2,7 +2,7 @@
 Package.describe({
   name: 'space:accounts-ui',
   summary: 'Application layer foundation for accounts UI implementations.',
-  version: '0.2.0',
+  version: '0.3.0',
   git: 'https://github.com/meteor-space/accounts-ui.git',
   documentation: 'README.md'
 });
@@ -20,8 +20,7 @@ Package.onUse(function(api) {
     'check',
     'accounts-base',
     'accounts-password',
-    'space:vo-user@0.2.1',
-    'space:accounts@0.1.2',
+    'space:accounts@0.2.0',
     'space:flux@0.7.0'
   ]);
 
@@ -62,8 +61,8 @@ Package.onTest(function(api) {
     'coffeescript',
     'accounts-password',
     'space:accounts-ui',
-    'space:vo-user@0.2.1',
-    'space:testing@2.0.1'
+    'space:vo-user@0.3.0',
+    'space:testing@3.0.1'
   ]);
 
 });
