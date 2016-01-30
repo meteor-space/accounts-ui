@@ -26,7 +26,7 @@ Space.messaging.Controller.extend('Space.accountsUi.SignupController', {
   _onSignupRequested(event) {
     this.log.info(`${this}: received signup request <${event}>`);
     // Extract all properties from the event but omit default stuff we dont need
-    let data = _.omit(event.toPlainObject(), 'eventVersion', 'timestamp');
+    let data = _.omit(event.toPlainObject(), 'schemaVersion', 'timestamp');
     if (data.password) {
       // Never send passwords in plain text over the wire
       data.password = new Password(this.sha256(data.password.toString()));
